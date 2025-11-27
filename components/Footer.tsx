@@ -1,5 +1,32 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Mail } from 'lucide-react';
+import { Linkedin, Instagram, Mail } from 'lucide-react';
+import { Logo } from './Logo';
+
+const TikTokIcon: React.FC<{ size?: number; className?: string }> = ({ size = 24, className = '' }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M14 4v7.2a3.2 3.2 0 1 1-3.2-3.2"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14 6.5c.6 1.1 1.7 2 3 2.3"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export const Footer: React.FC = () => {
   return (
@@ -8,38 +35,37 @@ export const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-                <div className="bg-mentu-red p-1.5 rounded-lg">
-                    <span className="text-white font-bold text-lg">M</span>
-                </div>
-                <span className="font-bold text-xl text-mentu-red">MENTU</span>
+                <Logo />
             </div>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
               Bilgiye ulaşmanın ve paylaşmanın en modern yolu. Sınırları kaldırın, potansiyelinizi keşfedin.
             </p>
             <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-mentu-red transition-colors"><Facebook size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-mentu-red transition-colors"><Twitter size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-mentu-red transition-colors"><Instagram size={20} /></a>
+                <a href="#" className="inline-flex items-center justify-center text-gray-400 hover:text-mentu-red transition-colors cursor-pointer">
+                  <TikTokIcon />
+                </a>
+                <a href="#" className="inline-flex items-center justify-center text-gray-400 hover:text-mentu-red transition-colors cursor-pointer">
+                  <Linkedin size={20} />
+                </a>
+                <a href="#" className="inline-flex items-center justify-center text-gray-400 hover:text-mentu-red transition-colors cursor-pointer">
+                  <Instagram size={20} />
+                </a>
             </div>
           </div>
 
           <div>
             <h4 className="font-bold text-gray-900 mb-6">Kurumsal</h4>
             <ul className="space-y-4 text-sm text-gray-500">
-              <li><a href="#" className="hover:text-mentu-red transition-colors">Hakkımızda</a></li>
-              <li><a href="#" className="hover:text-mentu-red transition-colors">Kariyer</a></li>
-              <li><a href="#" className="hover:text-mentu-red transition-colors">Basın Kiti</a></li>
-              <li><a href="#" className="hover:text-mentu-red transition-colors">İletişim</a></li>
+              <li><a href="/about" className="hover:text-mentu-red transition-colors">Hakkımızda</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-gray-900 mb-6">Keşfet</h4>
             <ul className="space-y-4 text-sm text-gray-500">
-              <li><a href="#" className="hover:text-mentu-red transition-colors">Eğitmen Ol</a></li>
-              <li><a href="#" className="hover:text-mentu-red transition-colors">Öğrenci Bul</a></li>
-              <li><a href="#" className="hover:text-mentu-red transition-colors">Tüm Kategoriler</a></li>
-              <li><a href="#" className="hover:text-mentu-red transition-colors">Başarı Hikayeleri</a></li>
+              <li><a href="/tutor" className="hover:text-mentu-red transition-colors">Eğitmen Ol</a></li>
+              <li><a href="/student" className="hover:text-mentu-red transition-colors">Öğrenci Ol</a></li>
+              <li><a href="/categories" className="hover:text-mentu-red transition-colors">Tüm Kategoriler</a></li>
             </ul>
           </div>
 
@@ -48,13 +74,6 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3 text-gray-500 text-sm mb-4">
                 <Mail size={16} />
                 <span>info@mentuapp.com</span>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-xl">
-                <p className="text-xs text-gray-400 mb-2">Uygulamayı İndirin</p>
-                <div className="flex gap-2">
-                    <div className="h-8 w-24 bg-black rounded flex items-center justify-center text-white text-[10px] font-bold cursor-pointer">App Store</div>
-                    <div className="h-8 w-24 bg-black rounded flex items-center justify-center text-white text-[10px] font-bold cursor-pointer">Google Play</div>
-                </div>
             </div>
           </div>
         </div>
